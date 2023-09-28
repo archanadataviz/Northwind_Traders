@@ -143,7 +143,6 @@ select distinct DATEFROMPARTS(YEAR(ord.orderdate), MONTH(ord.orderdate), 1) Mont
 from [Datasets].[dbo].[nw_orders] ord
 JOIN [Datasets].[dbo].[nw_order_details] orde ON ord.orderID = orde.orderID
 JOIN [Datasets].[dbo].nw_customers cust on cust.customerID = ord.customerID
- where DATEFROMPARTS(YEAR(orderdate), MONTH(orderdate), 1) = '2015-01-01'
 group by DATEFROMPARTS(YEAR(orderdate), MONTH(orderdate), 1),cust.companyName
 
 /****** Top 3 Customers by Sales  ******/
@@ -170,7 +169,6 @@ select distinct DATEFROMPARTS(YEAR(ord.orderdate), MONTH(ord.orderdate), 1) Mont
 from [Datasets].[dbo].[nw_orders] ord
 JOIN [Datasets].[dbo].[nw_order_details] orde ON ord.orderID = orde.orderID
 JOIN [Datasets].[dbo].nw_products prod on prod.productID = orde.productID
- where DATEFROMPARTS(YEAR(orderdate), MONTH(orderdate), 1) = '2015-01-01'
 group by DATEFROMPARTS(YEAR(orderdate), MONTH(orderdate), 1),prod.productName
 
 /****** Top 3 Products by Sales  ******/
